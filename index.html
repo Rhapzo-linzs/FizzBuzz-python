@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Pemrograman</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 10px;
+            border: none;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+        }
+
+        pre {
+            text-align: left;
+            background: #eee;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Tugas algoritma pertemuan 4</h1>
+<p>Nama: Reyhan Pasha</p>
+<p>NIM: 251011701059</p>
+
+<div class="card">
+    <h2>FizzBuzz</h2>
+    <button onclick="runFizzBuzz()">Jalankan</button>
+    <pre id="fizzbuzz"></pre>
+</div>
+
+<div class="card">
+    <h2>Konversi Hari</h2>
+    <input type="number" id="inputHari" placeholder="Masukkan hari">
+    <br>
+    <button onclick="konversiHari()">Konversi</button>
+    <pre id="hasil"></pre>
+</div>
+
+<script>
+function runFizzBuzz() {
+    let hasil = "";
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            hasil += "FizzBuzz\n";
+        } else if (i % 3 === 0) {
+            hasil += "Fizz\n";
+        } else if (i % 5 === 0) {
+            hasil += "Buzz\n";
+        } else {
+            hasil += i + "\n";
+        }
+    }
+    document.getElementById("fizzbuzz").textContent = hasil;
+}
+
+function konversiHari() {
+    let total = parseInt(document.getElementById("inputHari").value);
+
+    let tahun = Math.floor(total / 365);
+    let sisa = total % 365;
+
+    let bulan = Math.floor(sisa / 30);
+    let hari = sisa % 30;
+
+    let hasil = "Tahun: " + tahun + "\n";
+    hasil += "Bulan: " + bulan + "\n";
+    hasil += "Hari: " + hari;
+
+    document.getElementById("hasil").textContent = hasil;
+}
+</script>
+
+</body>
+</html>
