@@ -2,63 +2,91 @@
 <html>
 <head>
     <title>Tugas Algoritma</title>
+
     <style>
         body {
-            font-family: Arial;
-            background: #f4f6f9;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
+            color: #eaeaea;
             text-align: center;
         }
 
+        h1 {
+            color: #00c3ff;
+            letter-spacing: 2px;
+        }
+
         .card {
-            background: white;
+            background: #1e1e1e;
             width: 80%;
             margin: 20px auto;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 195, 255, 0.2);
             text-align: left;
+            border: 1px solid #2a2a2a;
+        }
+
+        h2 {
+            color: #00c3ff;
+        }
+
+        h3 {
+            color: #66e0ff;
         }
 
         button {
             padding: 8px 15px;
             margin: 10px 0;
             border: none;
-            background: blue;
-            color: white;
-            border-radius: 5px;
+            background: #00c3ff;
+            color: black;
+            border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #00a3d6;
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #2a2a2a;
+            color: white;
         }
 
         pre {
-            background: #eee;
+            background: #121212;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
+            border: 1px solid #333;
             overflow-x: auto;
+            color: #00ffcc;
         }
 
-        h3 {
-            margin-top: 20px;
+        hr {
+            border: 1px solid #333;
         }
     </style>
 </head>
 
 <body>
 
-<h1>TUGAS ALGORITMA PERTEMUAN 4</h1>
+<h1>⚡ Tugas Algoritma ⚡</h1>
 <p><b>Nama:</b> Reyhan Pasha</p>
 <p><b>NIM:</b> 251011701059</p>
 
 <!-- FIZZBUZZ -->
 <div class="card">
-    <h2>1. FizzBuzz</h2>
+    <h2>1. Algoritma FizzBuzz</h2>
 
     <p>
-    Program ini menggunakan perulangan dan percabangan untuk menampilkan angka 1-100 
-    dengan aturan tertentu.
+    Algoritma ini menggunakan konsep perulangan dan percabangan untuk menampilkan 
+    angka dari 1 sampai 100 dengan kondisi tertentu.
     </p>
-
-    <button onclick="runFizzBuzz()">Jalankan</button>
-    <pre id="fizzbuzz"></pre>
 
     <h3>Code Python:</h3>
     <pre>
@@ -72,21 +100,34 @@ for i in range(1, 101):
     else:
         print(i)
     </pre>
+
+    <h3>Code JavaScript:</h3>
+    <pre>
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        hasil += "FizzBuzz";
+    } else if (i % 3 === 0) {
+        hasil += "Fizz";
+    } else if (i % 5 === 0) {
+        hasil += "Buzz";
+    } else {
+        hasil += i;
+    }
+}
+    </pre>
+
+    <button onclick="runFizzBuzz()">Jalankan</button>
+    <pre id="fizzbuzz"></pre>
 </div>
 
 <!-- KONVERSI HARI -->
 <div class="card">
-    <h2>2. Konversi Hari</h2>
+    <h2>2. Algoritma Konversi Hari</h2>
 
     <p>
-    Program ini mengubah jumlah hari menjadi tahun, bulan, dan hari menggunakan 
-    operasi pembagian dan sisa bagi.
+    Algoritma ini digunakan untuk mengubah jumlah hari menjadi tahun, bulan, 
+    dan hari menggunakan operasi pembagian dan sisa bagi.
     </p>
-
-    <input type="number" id="inputHari" placeholder="Masukkan jumlah hari">
-    <br>
-    <button onclick="konversiHari()">Konversi</button>
-    <pre id="hasil"></pre>
 
     <h3>Code Python:</h3>
     <pre>
@@ -103,6 +144,19 @@ print("Bulan :", bulan)
 print("Hari  :", hari)
     </pre>
 
+    <h3>Code JavaScript:</h3>
+    <pre>
+let tahun = Math.floor(total / 365);
+let sisa = total % 365;
+
+let bulan = Math.floor(sisa / 30);
+let hari = sisa % 30;
+    </pre>
+
+    <input type="number" id="inputHari" placeholder="Masukkan jumlah hari">
+    <br>
+    <button onclick="konversiHari()">Konversi</button>
+    <pre id="hasil"></pre>
 </div>
 
 <script>
@@ -137,7 +191,3 @@ function konversiHari() {
 
     document.getElementById("hasil").textContent = hasil;
 }
-</script>
-
-</body>
-</html>
